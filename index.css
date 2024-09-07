@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+
+    --primary-color:#edf2fc;
+    --secondary-color:#212121;
+}
+.dark_theme{
+
+    --primary-color:#212121;
+    --secondary-color:#edf2fc;
+    
+}
+body {
+    font-family: 'Ubuntu', sans-serif;
+    width: 100%;
+    height: 100vh;
+    background: var(--primary-color);
+    display: grid;
+    place-items: center;
+}
+
+header {
+    width: 85%;
+    height: 95%;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    
+}
+
+header .left_side {
+    width: 35%;
+    height: 100%;
+    color: white;
+    background-color: #080b14;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 20px;
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.3);
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    position: relative;
+}
+header .left_side .logo{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+}
+
+header .right_side {
+    width: 65%;
+    height: 100%;
+    color: white;
+    background-color: #2c3e50;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 20px;
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    position: relative; /* Make the container relative for absolute positioning inside */
+}
+
+header .left_side h1, .right_side h1 {
+    font-family: 'Varela Round', sans-serif;
+    font-size: 2rem;
+    text-align: center;
+}
+
+header .left_side p, .right_side p {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1rem;
+    text-align: center;
+    color: #bdc3c7;
+}
+header .left_side .logo img {
+    width: auto;
+    height: 100px; /* Set a specific height for the image */
+    border-radius: 50%;
+    display: block;
+}
+header .left_side .Menu{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    justify-content: flex-start;
+    width: 100%;
+    padding-top: 20px; /* Adds space between the logo and menu items */
+}
+header .left_side .Menu ul{
+   list-style-type: none;
+   padding: 0;
+}
+header .left_side .Menu h3 {
+    font-family: 'Varela Round', sans-serif;
+    font-size: 1.5rem;
+    color: rgb(255, 255, 255);
+    font-weight: lighter;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: text-shadow 0.3s ease, color 0.3s ease; /* Smooth transition for glow effect */
+}
+
+header .left_side .Menu h3:hover {
+    text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.842); /* Creates a glowing effect */
+}
+/* buttons */
+.Menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.Menu ul li {
+    margin: 10px 0;
+    padding-top: 30px;
+}
+
+.Menu ul li a {
+    background-color: #080b14; /* Green background */
+    color: white; /* White text */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+   
+}
+
+.Menu ul li a:hover {
+    background-color: #45a049; /* Darker green */
+}
+header .right_side nav .theme img {
+    width: 30px;
+    cursor: pointer;
+    position: absolute;
+    right: 12px;
+    top: 5%;
+    transform: translateY(-50%); /* Center the image vertically */
+    margin-bottom: 40px;
+   
+}
+#icon {
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    transform-origin: center;
+}
+
+#icon.rotate {
+    transform: rotate(180deg);
+    opacity: 0;
+}
+/* calendar css */
+/* Outer Box for Calendar */
+header .right_side .outer-box {
+    border: none;
+    border-radius: 12px;
+    padding: 20px;
+    width: 400px;
+    background-color: var(--primary-color); /* Light background color */
+    box-shadow: 9px 7px 8px rgba(0, 0, 0, 27%); /* Subtle shadow for depth */
+}
+
+/* Calendar Section */
+/* Right Side Styling */
+header .right_side {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+/* Align the theme toggle and the calendar section */
+header .right_side nav {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+/* Outer box containing the calendar and event form */
+header .right_side .outer-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Calendar Section */
+
+header .right_side .outer-box .calendar {
+    margin-bottom: 30px;
+    width: 100%;
+}
+header .right_side .outer-box .calendar .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .right_side .outer-box .calendar .weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-top: 10px;
+}
+
+header .right_side .outer-box .calendar .days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-top: 10px;
+}
+
+header .right_side .outer-box .weekdays div,
+header .right_side .outer-box .days div {
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: var(--secondary-color);
+}
+
+/* Hover effect for the days */
+.days div {
+    cursor: pointer;
+    transition: background-color 0.3s;
+   
+}
+
+.days div:hover {
+    background-color: #add8e6; /* Light blue hover effect */
+}
+
+.current-day {
+    background-color: yellow;
+    font-weight: bold;
+}
+
+/* Event Form Styling */
+.event-form,
+.event-list {
+    margin-top: 20px;
+    width: 100%;
+    color: var(--secondary-color);
+}
+
+.event-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+button {
+    padding: 5px 10px;
+    margin-top: 5px;
+    border: 2px solid aqua;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: aqua;
+    color: white;
+}
+
+/* Theme Toggle Styling */
+.theme {
+    margin-bottom: 20px;
+}
+
+.theme img {
+    width: 30px;
+    cursor: pointer;
+}
+#monthYear{
+    color: var(--secondary-color); /* Set the color you want */
+    font-size: 24px; /* You can also adjust the font size */
+    font-weight: bold; /* Make it bold if desired */
+    text-align: center; /* Center the text */
+    margin-bottom: 10px; /* Add some margin */
+}
